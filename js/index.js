@@ -47,7 +47,7 @@ function dbcopy() {
                 }
             },
             function(error){
-                alert('Error occurred '+error);
+                $("#df").html('Error occurred '+error);
             });
         });
 }
