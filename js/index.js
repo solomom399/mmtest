@@ -9,11 +9,17 @@ function onDeviceReady() {
     $("#df").html("Working ")
 }
 
+document.addEventListener("backbutton", onBackKeyDown, false);
+
+function onBackKeyDown(e) {
+   e.preventDefault();
+   alert('Back Button is Pressed!');
+}
 
 
 function dbcopy() {
         //var myDB = window.sqlitePlugin.openDatabase({name: "mySQLite.db", location: 'default'});
-        var myDB = window.sqlitePlugin.openDatabase({ name : "../mydb.db", createFromLocation : 1 });
+        var myDB = window.sqlitePlugin.openDatabase({ name : "mydb.db", createFromLocation : 1 });
         /*myDB.transaction(function(transaction) {
             transaction.executeSql('CREATE TABLE IF NOT EXISTS phonegap_pro (id integer primary key, title text, desc text)', [],
             function(tx, result) {
