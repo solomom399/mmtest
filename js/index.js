@@ -34,7 +34,27 @@ function removeDB() {
 
 function copysuccess() {
         //open db and run your queries
-         db = window.sqlitePlugin.openDatabase({name: "mydb.db"});.
+        var db = window.sqlitePlugin.openDatabase({name: 'mydb.db', location: 'default'});
+        /*db.transaction(function(transaction) {
+          transaction.executeSql('CREATE TABLE IF NOT EXISTS phonegap_pro (id integer primary key, title text, desc text)', [],
+          function(tx, result) {
+            alert("Table created successfully");
+          },
+          function(error) {
+            alert("Error occurred while creating the table.");
+          });
+        });
+*/
+
+        db.transaction(function(transaction) {
+          transaction.executeSql('SELECT * FROM user', [], function (tx, results) {
+          var len = results.rows.length, i;
+            $("#rowCount").append(len);
+            for (i = 0; i < len; i++){
+              $("#TableData").append("<tr><td>"+results.rows.item(i).id+"</td><td>"+results.rows.item(i).title+"</td><td>"+results.rows.item(i).desc+"</td></tr>");
+            }
+          }, null);
+        });
 }
 
 function copyerror(e) {
