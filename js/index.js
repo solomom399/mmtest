@@ -34,7 +34,7 @@ function removeDB() {
 
 function copysuccess() {
         //open db and run your queries
-        var db = window.sqlitePlugin.openDatabase({name: 'mydb.db', location: 'default'});
+        var db = window.sqlitePlugin.openDatabase({name: 'mydb', location: 'default'});
         /*db.transaction(function(transaction) {
           transaction.executeSql('CREATE TABLE IF NOT EXISTS phonegap_pro (id integer primary key, title text, desc text)', [],
           function(tx, result) {
