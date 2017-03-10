@@ -57,7 +57,7 @@ function dbcopy() {
                 var len = results.rows.length, i;
                 $("#rowCount").append(len);
                 for (i = 0; i < len; i++){
-                    $("#TableData").append("<tr><td>"+results.rows.item(i).name+"</td></tr>");
+                    $("#TableData").append("<tr><td>nAme: "+results.rows.item(i).name+"</td></tr>");
                 }
             },
             function(error){
