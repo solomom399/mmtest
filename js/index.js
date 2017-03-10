@@ -13,7 +13,12 @@ document.addEventListener("backbutton", onBackKeyDown, false);
 
 function onBackKeyDown(e) {
    e.preventDefault();
-   alert('Back Button is Pressed!');
+    var conf = confirm("Are you sure you want to exit this app")
+    if(conf){
+        navigator.app.exitApp();
+    } else {
+        alert('Thank you!');
+    }
 }
 
 
