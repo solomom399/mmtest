@@ -25,7 +25,7 @@ function onBackKeyDown(e) {
 function dbcopy() {
         //var myDB = window.sqlitePlugin.openDatabase({name: "mySQLite.db", location: 'default'});
         var myDB = window.sqlitePlugin.openDatabase({
-            name: "mydb.db",
+            name: "newdb.db",
             createFromLocation: 1
         });
         /*myDB.transaction(function(transaction) {
