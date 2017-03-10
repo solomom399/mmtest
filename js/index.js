@@ -24,7 +24,7 @@ function onBackKeyDown(e) {
 
 function dbcopy() {
         //var myDB = window.sqlitePlugin.openDatabase({name: "mySQLite.db", location: 'default'});
-        var myDB = window.openDatabase({ name : "mydb"});
+        var myDB = window.openDatabase({ name : "../mydb.db"});
         /*myDB.transaction(function(transaction) {
             transaction.executeSql('CREATE TABLE IF NOT EXISTS phonegap_pro (id integer primary key, title text, desc text)', [],
             function(tx, result) {
