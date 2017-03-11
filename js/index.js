@@ -24,10 +24,12 @@ function onBackKeyDown(e) {
 
 function dbcopy() {
         //var myDB = window.sqlitePlugin.openDatabase({name: "mySQLite.db", location: 'default'});
-        var myDB = window.sqlitePlugin.openDatabase({
-            name: "newdb.db",
-            createFromLocation: 1
-        });
+        var myDB = window.sqlitePlugin.openDatabase({name: "newdb.db", location: 'default', createFromLocation: 1}, function(db) {
+            alert("Success")
+          },
+          function(err) {
+            alert('Open database ERROR: ' + JSON.stringify(err));
+          });
         /*myDB.transaction(function(transaction) {
             transaction.executeSql('CREATE TABLE IF NOT EXISTS phonegap_pro (id integer primary key, title text, desc text)', [],
             function(tx, result) {
