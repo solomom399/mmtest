@@ -50,7 +50,7 @@ function dbcopy() {
     
     
         myDB.transaction(function(transaction) {
-            transaction.executeSql('SELECT * FROM user', [], function (tx, results) {
+            transaction.executeSql('SELECT * FROM phonegap_pro', [], function (tx, results) {
                 var len = results.rows.length, i;
                 $("#rowCount").append(len);
                 for (i = 0; i < len; i++){
