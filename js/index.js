@@ -23,9 +23,9 @@ function onBackKeyDown(e) {
 
 
 function dbcopy() {
-        var myDB = window.sqlitePlugin.openDatabase({name: "mySQLite.db", location: 'default'});
-        // var myDB = window.sqlitePlugin.openDatabase({name: "newdb.db", location: 'default', createFromLocation: 1});
-        myDB.transaction(function(transaction) {
+        // var myDB = window.sqlitePlugin.openDatabase({name: "mySQLite.db", location: 'default'});
+        var myDB = window.sqlitePlugin.openDatabase({name: "newdb.db", location: 'default', createFromLocation: 1});
+        /*myDB.transaction(function(transaction) {
             transaction.executeSql('CREATE TABLE IF NOT EXISTS phonegap_pro (id integer primary key, title text, desc text)', [],
             function(tx, result) {
                 alert("Table created successfully");
@@ -46,11 +46,11 @@ function dbcopy() {
             function(error){
                 alert('Error occurred');
             });
-        });
+        });*/
     
     
         myDB.transaction(function(transaction) {
-            transaction.executeSql('SELECT * FROM phonegap_pro', [], function (tx, results) {
+            transaction.executeSql('SELECT * FROM user', [], function (tx, results) {
                 var len = results.rows.length, i;
                 $("#rowCount").append(len);
                 for (i = 0; i < len; i++){
