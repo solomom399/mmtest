@@ -23,9 +23,9 @@ function onBackKeyDown(e) {
 
 
 function dbcopy() {
-        //var myDB = window.sqlitePlugin.openDatabase({name: "mySQLite.db", location: 'default'});
-        var myDB = window.sqlitePlugin.openDatabase({name: "newdb.db", location: 'default', createFromLocation: 1});
-        /*myDB.transaction(function(transaction) {
+        var myDB = window.sqlitePlugin.openDatabase({name: "mySQLite.db", location: 'default'});
+        // var myDB = window.sqlitePlugin.openDatabase({name: "newdb.db", location: 'default', createFromLocation: 1});
+        myDB.transaction(function(transaction) {
             transaction.executeSql('CREATE TABLE IF NOT EXISTS phonegap_pro (id integer primary key, title text, desc text)', [],
             function(tx, result) {
                 alert("Table created successfully");
@@ -46,7 +46,7 @@ function dbcopy() {
             function(error){
                 alert('Error occurred');
             });
-        });*/
+        });
     
     
         myDB.transaction(function(transaction) {
@@ -54,11 +54,11 @@ function dbcopy() {
                 var len = results.rows.length, i;
                 $("#rowCount").append(len);
                 for (i = 0; i < len; i++){
-                    $("#TableData").append("<tr><td>nAme: "+results.rows.item(i).name+"</td></tr>");
+                    $("#TableData").append("<tr><td>nAme: "+results.rows.item(i).title+"</td></tr>");
                 }
             },
             function(error){
-                $("#df").html('Error occurred '+error);
+                $("#df").html('Error occurred '+JSON.stringify(error));
             });
         });
 }
